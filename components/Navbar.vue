@@ -5,9 +5,9 @@
     <nav class="navbar">
      
       <ul>
-       <li><a href="#">Home</a></li>
-       <li><a href="#">Play</a></li>
-       <li><a href="#">About</a></li> 
+       <li><a href="/main">Home</a></li>
+       <li><a href="https://dice-game-tau-tan.vercel.app/">Play</a></li>
+       <li><a href="/about">About</a></li> 
       </ul>
     </nav>
   </div>

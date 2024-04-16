@@ -5,22 +5,61 @@
    <body>
     <div class="container">
 		<h1 class="label">User Login</h1>
-		<form class="login_form" action="home.html" method="post" name="form" onsubmit="return validated()">
+		<form class="login_form" @submit.prevent="signIn">
 			<div class="font">Email</div>
 			<input autocomplete="off" type="text" name="email">
-			<div id="email_error">Please fill up your Email or Phone</div>
 			<div class="font font2">Password</div>
 			<input type="password" name="password">
 			<div id="pass_error">Please fill up your Password</div>
-			<button type="submit">Login</button>
+			<button @click="signIn">Login</button>
 		</form>
 	</div>	
 
    </body>
 </template>
 
-<script >
- 
+
+ <script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+const router = useRouter(); 
+const user = useSupabaseUser();
+const client = useSupabaseClient();
+const email = ref('');
+const password = ref('');
+
+if(user.value)
+{
+  router.push('/about')
+}
+
+
+
+async function signIn() {
+  try 
+  {
+    const { data, error } = await client.auth.signInWithPassword({
+      email: email.value,
+      password: password.value
+    });
+
+    if(error)
+    {
+      throw error;
+    } 
+    
+    else
+    {
+      router.push('/about');
+    }
+  } 
+  
+  catch(error) 
+  {
+    console.error(error);
+  }
+} 
+
 </script>
 
 <style scoped>

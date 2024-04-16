@@ -6,7 +6,7 @@
       <h1>Welcome</h1>
       <p class="sub-heading"></p>
       <a href="about"><button><h2>PLAY NOW</h2></button></a>
-      <button><h2>SIGN UP</h2></button>
+      <a href="signup"><button><h2>SIGN UP</h2></button></a>
     </div>
 
     <div class="cube-container">
@@ -102,6 +102,10 @@ main h1 {
 main .sub-heading {
   font-size: 24px;
   margin: 0 ;
+}
+
+button {
+  cursor: pointer;
 }
 
 .cube-container .cube-face {

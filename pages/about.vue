@@ -14,6 +14,7 @@
      On your turn, you can roll the dice multiple times to accumulate points for that turn.
      On your turn, roll the dice. The numbers rolled on the dice are added to your current turn score.</p>
      <p class="red">If you roll a 1 Your turn score becomes 0, Your turn ends, and it's the next player's turn.</p><p>If you decide to Hold Your turn score is added to your total score and It's the next player's turn. </p>
+     <p> Pressing the "bonus" button triggers the generation of a random true or false question. If answered correctly, 50 points are added to the player's score.</p>
      <p>The first player to reach the 100 points or more wins the game.</p>
     </div>
   </div>
@@ -40,6 +41,11 @@ body {
   margin: 0;
   padding: 0;
   background-color: black;
+}
+
+img {
+  padding-top: 10rem;
+  height: 200px;
 }
 
 .box{
